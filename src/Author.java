@@ -1,14 +1,15 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Author {
 
-    public Author(String firstName, String lastName, String country, boolean isAlive) {
+    public Author(String firstName, String lastName, String country, boolean isAlive, int age, List<Book> listOfBooks) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.country = country;
         this.isAlive = isAlive;
         this.age = age;
-        this.books = books;
+        this.listOfBooks = listOfBooks;
     }
 
     /**
@@ -31,7 +32,7 @@ public class Author {
     public String country;
     public boolean isAlive;
     public int age;
-    public ArrayList<Book>books= new ArrayList<>();
+    public List<Book>listOfBooks;
 
 
 
@@ -44,14 +45,29 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Author{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", country='" + country + '\'' +
-                ", isAlive=" + isAlive +
-                ", age=" + age +
-                '}';
-    }
-    //YOUR CODE HERE
+        String output = "Author information= ";
+        if (age == 0) {
+            output = "Author{" +
+                    "firstName='" + firstName + '\'' +
+                    ", lastName='" + lastName + '\'' +
+                    ", country='" + country + '\'' +
+                    ", isAlive=" + isAlive +
+                    '}';
+        } else {
+            output = "Author{" +
+                    "firstName='" + firstName + '\'' +
+                    ", lastName='" + lastName + '\'' +
+                    ", country='" + country + '\'' +
+                    ", isAlive=" + isAlive +
+                    ", age=" + age +
+                    '}';
 
-}
+        }
+        output += "\nAuthor's books are as listed below:\n";
+
+        for (Book book : listOfBooks) {
+            output += book;
+        }
+        //YOUR CODE HERE
+        return output;
+    }}

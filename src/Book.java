@@ -3,7 +3,7 @@ public class Book {
     public Book(String name, String genre, int totalPage) {
         this.name = name;
         this.genre = genre;
-        this.totalPage = totalPage;
+        this.page = page;
     }
 
     /**
@@ -20,15 +20,15 @@ public class Book {
 
     public String name;
     public String genre;
-    public int totalPage;
+    public int page;
 
     @Override
     public String toString() {
         return "Book{" +
                 "name='" + name + '\'' +
                 ", genre='" + genre + '\'' +
-                ", totalPage=" + totalPage +
-                '}';
+                ", page=" + page +
+                "}\n";
     }
 
 
